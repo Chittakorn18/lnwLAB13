@@ -45,7 +45,7 @@ void updateImage(bool image[][M], int s, int x, int y) {
 
     for (int i = minRow; i <= maxRow; ++i) {
         for (int j = minCol; j <= maxCol; ++j) {
-            if (sqrt(pow(i - x, 2) + pow(j - y, 2)) <= s) {
+            if (sqrt(pow(i - x, 2) + pow(j - y, 2)) <= s-1) {
                 image[i][j] = true;
             }
         }
