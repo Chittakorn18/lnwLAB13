@@ -17,3 +17,39 @@ int main(){
     cout << "\nMin = " << B[5];
     return 0;
 }
+void stat(const double arr[], int size, double result[]) {
+    double sum = 0;
+    for (int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    result[0] = sum / size;
+    double mean = result[0];
+    double variance = 0;
+    for (int i = 0; i < size; ++i) {
+        variance += pow(arr[i] - mean, 2);
+    }
+    variance /= size;
+    result[1] = sqrt(variance);
+    double product = 1.0;
+    for (int i = 0; i < size; ++i) {
+        product *= arr[i];
+    }
+    result[2] = pow(product, 1.0 / size);
+    double harmonic = 0;
+    for (int i = 0; i < size; ++i) {
+        harmonic += 1 / arr[i];
+    }
+    result[3] = size / harmonic;
+    double max = arr[0];
+    double min = arr[0];
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    result[4] = max;
+    result[5] = min;
+    }
